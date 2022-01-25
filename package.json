@@ -14,5 +14,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  }
+  },
+  "repository": "https://github.com/BARATR1X/aluracord.baratrix.git",
+  "author": "BARATR1X <baratrix1@hotmail.com>"
 }

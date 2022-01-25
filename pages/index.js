@@ -39,9 +39,26 @@ function Title(props) {
       <Tag>{props.children}</Tag>
       <style jsx>{`
         ${Tag} {
-          color: ${appConfig.theme.colors.neutrals["000"]};
-          font-size: 24px;
-          font-weight: 600;
+          color: ${appConfig.theme.colors.neutrals["100"]};
+          font-size: 40px;
+          font-weight: 700;
+        }
+      `}</style>
+    </>
+  );
+}
+
+function Title2(props1) {
+  const Tag = props1.tag || 'h3';
+  return (
+    <>
+      <Tag>{props1.children}</Tag>
+      <style jsx>{`
+        ${Tag} {
+          color: ${appConfig.theme.colors.primary[100]};
+          font-size: 20px;
+          font-weight: 700;
+          marginTop: 10px;
         }
       `}</style>
     </>
@@ -64,8 +81,8 @@ function Title(props) {
 //export default HomePage
 
 export default function PaginaInicial() {
-  const username = "peas";
-
+  const username = "Baratr1x";
+  
   return (
     <>
       <GlobalStyle />
@@ -74,14 +91,16 @@ export default function PaginaInicial() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: appConfig.theme.colors.primary[500],
+          backgroundColor: appConfig.theme.colors.neutrals["100"],          
           backgroundImage:
             "url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
         }}
-      >
+
+        //borda de fora
+> 
         <Box
           styleSheet={{
             display: "flex",
@@ -92,11 +111,13 @@ export default function PaginaInicial() {
               sm: "row",
             },
             width: "100%",
-            maxWidth: "700px",
-            borderRadius: "5px",
-            padding: "32px",
-            margin: "16px",
-            boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
+            maxWidth: "800px",
+            borderRadius: "100px 1px",
+            border: "2px solid",
+            borderColor: appConfig.theme.colors.primary[100],
+            padding: "50px",
+            margin: "10px",
+            boxShadow: "10px 3px 10px 0 rgb(10 10 10 / 20%)",
             backgroundColor: appConfig.theme.colors.neutrals[700],
           }}
         >
@@ -112,26 +133,36 @@ export default function PaginaInicial() {
               textAlign: "center",
               marginBottom: "32px",
             }}
-          >
-            <Title tag="h2">Boas vindas de volta!</Title>
+            >
+            <Title tag="h2">Chega no papo !</Title>
             <Text
               variant="body3"
-              styleSheet={{
-                marginBottom: "32px",
-                color: appConfig.theme.colors.neutrals[300],
+              styleSheet={{   
+                marginTop: "10px",             
+                marginBottom: "-10px",
+                color: appConfig.theme.colors.primary[100],
               }}
-            >
-              {appConfig.name}
+          >
             </Text>
-
+          
+            <Title2 tag="h3">Aluracord - Baratrix (bara)</Title2>
+            <Text
+              variant="body3"
+              styleSheet={{                              
+                marginBottom: "32px",
+                color: appConfig.theme.colors.primary[100],
+              }}
+            >              
+            </Text>
+             
             <TextField
               fullWidth
               textFieldColors={{
                 neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                  textColor: appConfig.theme.colors.neutrals[100], //cor do texto
+                  mainColor: appConfig.theme.colors.neutrals[100], //cor da borda
+                  mainColorHighlight: appConfig.theme.colors.primary[100], //cor da borda com hover
+                  backgroundColor: appConfig.theme.colors.neutrals[800], // cor do fundo do formulario
                 },
               }}
             />
@@ -139,11 +170,13 @@ export default function PaginaInicial() {
               type="submit"
               label="Entrar"
               fullWidth
-              buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+              buttonColors={{                
+                contrastColor: appConfig.theme.colors.neutrals["900"], // cor da letra                             
+                mainColor: appConfig.theme.colors.primary[100], // cor background fundo                
+                mainColorStrong: appConfig.theme.colors.neutrals[100], // cor background fundo hover
+                borderRadius: "10px",
+                border: "1px solid",
+                borderColor: appConfig.theme.colors.neutrals[100],
               }}
             />
           </Box>
@@ -157,25 +190,27 @@ export default function PaginaInicial() {
               alignItems: "center",
               maxWidth: "200px",
               padding: "16px",
-              backgroundColor: appConfig.theme.colors.neutrals[800],
+              backgroundColor: appConfig.theme.colors.neutrals[900],
               border: "1px solid",
-              borderColor: appConfig.theme.colors.neutrals[999],
-              borderRadius: "10px",
+              borderColor: appConfig.theme.colors.neutrals[100],
+              borderRadius: "100px 1px",
               flex: 1,
               minHeight: "240px",
             }}
           >
             <Image
               styleSheet={{
+                border: "3px solid" ,
+                borderColor: appConfig.theme.colors.primary[100],
                 borderRadius: "50%",
                 marginBottom: "16px",
               }}
               src={`https://github.com/${username}.png`}
             />
             <Text
-              variant="body4"
+              variant="body2"
               styleSheet={{
-                color: appConfig.theme.colors.neutrals[200],
+                color: appConfig.theme.colors.primary[100],
                 backgroundColor: appConfig.theme.colors.neutrals[900],
                 padding: "3px 10px",
                 borderRadius: "1000px",
